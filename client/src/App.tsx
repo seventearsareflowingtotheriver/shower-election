@@ -37,7 +37,7 @@ function App() {
         setMessage('');
 
         try {
-          const response = await fetch('http://localhost:3001/api/proposes', {
+          const response = await fetch('https://shower-election.up.railway.app/api/proposes', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
