@@ -49,12 +49,12 @@ app.post('/api/proposes', async (req: Request, res: Response) => {
             [name.trim(), reason?.trim() || null]
         );
 
-        await pool.query(`
+       /* await pool.query(`
             INSERT INTO candidates (name, proposes) 
             VALUES ($1, 1)
             ON CONFLICT (name) 
             DO UPDATE SET proposes = candidates.proposes + 1
-        `, [name.trim()]);
+        `, [name.trim()]); */
 
         res.status(201).json({
             message: 'Кандидата успішно запропоновано!',
